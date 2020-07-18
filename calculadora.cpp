@@ -14,6 +14,7 @@ int main()
     cout << "Digite a operação: ";
     cin >> operacao;
 
+// Operações básicas
     switch (operacao)
     {
     case '+':
