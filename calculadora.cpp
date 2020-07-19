@@ -2,10 +2,16 @@
 
 using namespace std;
 
+float soma(float num1, float num2)
+{
+    return num1 + num2;
+}
+
 int main()
 {
-    int num1, num2, resultado;
+    float num1, num2, resultado;
     char operacao;
+    bool opValida = true;
 
     cout << "Digite o primeiro número: ";
     cin >> num1;
@@ -14,11 +20,11 @@ int main()
     cout << "Digite a operação: ";
     cin >> operacao;
 
-// Operações básicas
+    // Operações básicas
     switch (operacao)
     {
     case '+':
-        resultado = num1 + num2;
+        resultado = soma(num1, num2);
         break;
 
     case '-':
@@ -34,10 +40,18 @@ int main()
         break;
 
     default:
+        opValida = false;
         break;
     }
 
-    cout << "Resultado: " << resultado << endl;
+    if (opValida)
+    {
+        cout << "Resultado: " << resultado << endl;
+    }
+    else
+    {
+        cout << "Operação inválida" << endl;
+    }
 
     return 0;
 }
